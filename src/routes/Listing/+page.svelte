@@ -1,32 +1,9 @@
 <script>
   // import "bootstrap/dist/js/bootstrap.bundle.min.js";
-  //import "../AddPageCard.svelte";
-  import "bootstrap/dist/css/bootstrap.min.css";
-  import "./style.css";
-  import "../ProactNavbar.svelte";
-  import { initializeApp } from "firebase/app";
-  import { collection, getDocs, getFirestore } from "firebase/firestore";
   import ProactNavbar from "../ProactNavbar.svelte";
+  import "bootstrap/dist/css/bootstrap.min.css";
+  import "../Register/style.css";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyCeBCVVfalGWO03XNkJy8F1hJsII6Lgjb0",
-    authDomain: "practice-5c982.firebaseapp.com",
-    databaseURL: "https://practice-5c982-default-rtdb.firebaseio.com",
-    projectId: "practice-5c982",
-    storageBucket: "practice-5c982.appspot.com",
-    messagingSenderId: "664592348370",
-    appId: "1:664592348370:web:4385f2b327bbc5562aa90b",
-  };
-
-  initializeApp(firebaseConfig);
-
-  const db = getFirestore();
-  const buyerDB = collection(db, "buyerDB");
-
-  getDocs(buyerDB).then((s) => {
-    // console.log(s.docs.length);
-    // console.log(s.docs);
-  });
   const data = [
     {
       name: "sample",
@@ -107,5 +84,5 @@
         </div>
       {/each}
     </div>
-  </div></body
->
+  </div>
+</body>
