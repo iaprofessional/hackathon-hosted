@@ -1,6 +1,6 @@
 <script>
-  // import "bootstrap/dist/js/bootstrap.bundle.min.js";
-  //import "../AddPageCard.svelte";
+  // @ts-nocheck
+
   import "bootstrap/dist/css/bootstrap.min.css";
   import "./style.css";
   import "../ProactNavbar.svelte";
@@ -24,88 +24,40 @@
   const buyerDB = collection(db, "buyerDB");
 
   getDocs(buyerDB).then((s) => {
-    // console.log(s.docs.length);
+    console.log(s.docs.length);
     // console.log(s.docs);
   });
-  const data = [
-    {
-      name: "sample",
-      title: "Item 1",
-      number: "+91 12345 67890",
-    },
-    {
-      name: "sample",
-      title: "Item 2",
-      number: "+91 12345 67890",
-    },
-    {
-      name: "sample",
-      title: "Item 3",
-      number: "+91 12345 67890",
-    },
-    {
-      name: "sample",
-      title: "Item 4",
-      number: "+91 12345 67890",
-    },
-    {
-      name: "sample",
-      title: "Item 5",
-      number: "+91 12345 67890",
-    },
-    {
-      name: "sample",
-      title: "Item 6",
-      number: "+91 12345 67890",
-    },
-    {
-      name: "sample",
-      title: "Item 7",
-      number: "+91 12345 67890",
-    },
-    {
-      name: "sample",
-      title: "Item 8",
-      number: "+91 12345 67890",
-    },
-    {
-      name: "sample",
-      title: "Item 9",
-      number: "+91 12345 67890",
-    },
-    {
-      name: "sample",
-      title: "Item 10",
-      number: "+91 12345 67890",
-    },
-    {
-      name: "sample",
-      title: "Item 11",
-      number: "+91 12345 67890",
-    },
-    {
-      name: "sample",
-      title: "Item 12",
-      number: "+91 12345 67890",
-    },
-  ];
 </script>
 
-<body class="bg-black">
+<body style="background-color: #FAEAEE;">
   <ProactNavbar />
   <div class="container mt-5">
     <div class="row mt-5">
-      {#each data as i}
-        <div class="col-md-3 mt-4">
-          <div class="box">
-            <h1>{i.title}</h1>
-            <br />
-            <h3>{i.name}</h3>
-            <br />
-            <h3>{i.number}</h3>
+      {#await getDocs(buyerDB) then s}
+        {#each s.docs as data}
+          <div class="col-lg-4 mt-4">
+            <div class="box">
+              <h1>
+                {data["_document"]["data"]["value"]["mapValue"]["fields"][
+                  "title"
+                ].stringValue}
+              </h1>
+              <br />
+              <h3>
+                {data["_document"]["data"]["value"]["mapValue"]["fields"][
+                  "name"
+                ].stringValue}
+              </h3>
+              <br />
+              <h3>
+                {data["_document"]["data"]["value"]["mapValue"]["fields"][
+                  "number"
+                ].stringValue}
+              </h3>
+            </div>
           </div>
-        </div>
-      {/each}
+        {/each}
+      {/await}
     </div>
   </div></body
 >

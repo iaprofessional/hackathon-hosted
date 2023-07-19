@@ -1,5 +1,12 @@
+element {
+  --main-color: #FAEAEE;
+  --secondary-color: #594A47;
+  --third-color: #C65097;
+}
+
 body {
-  margin-top: 40px; /* This margin just makes the text easier to read. You can remove it if you want since it can mess with your other styles. */
+  margin-top: 40px;
+  /* This margin just makes the text easier to read. You can remove it if you want since it can mess with your other styles. */
 }
 
 body::before {
@@ -11,44 +18,14 @@ body::before {
   top: 5;
   right: 0;
 }
-  
-  /* This box class is purely used for explaining how the bootstrap grid system works. */
-  .box {
-    height: 250px; /* Increase the height value as desired */
-    background-color: lightgray;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    text-align: center;
-  
-  }
-  @media (min-width: 576px) {
-    body::before {
-      content: "SM";
-    }
-  }
-  
-  @media (min-width: 768px) {
-    body::before {
-      content: "MD";
-    }
-  }
-  
-  @media (min-width: 992px) {
-    body::before {
-      content: "LG";
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    body::before {
-      content: "XL";
-    }
-  }
-  
-  @media (min-width: 1400px) {
-    body::before {
-      content: "XXL";
-    }
-  }
 
-  
+.box {
+  /* height: 250px; */
+  /* Increase the height value as desired */
+  background-color: white;
+
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+
+}
