@@ -52,6 +52,7 @@
   function handleFileChange(event) {
     files = event.target.files;
     const file = files[0];
+    console.log(file);
     const extension = getFileEXT(file);
     const name = getFileName(file);
     console.log("name & ext: " + name + " & " + extension);
@@ -115,33 +116,43 @@
 
   function update() {
     if (Sellector == false) {
-      addDoc(sellerDB, {
-        price: SP,
-        image: downloadURL,
-        number: Snumber,
-        title: ST,
-      }).then(() => {
-        ST = "";
-        SP = "";
-        Snumber = "";
-      });
+      if (ST != "" && SP != "" && Snumber != "") {
+        addDoc(sellerDB, {
+          price: SP,
+          image: downloadURL,
+          number: Snumber,
+          title: ST,
+        }).then(() => {
+          ST = "";
+          SP = "";
+          Snumber = "";
+          alert("Pls close the box and refresh site");
+        });
+      } else {
+        alert("All input required");
+      }
     } else {
-      addDoc(buyerDB, {
-        number: Bnumber,
-        title: BT,
-        name: BN,
-      }).then(() => {
-        BT = "";
-        BN = "";
-        Bnumber = "";
-      });
+      if (BN != "" && BT != "" && Bnumber != "") {
+        addDoc(buyerDB, {
+          number: Bnumber,
+          title: BT,
+          name: BN,
+        }).then(() => {
+          BT = "";
+          BN = "";
+          Bnumber = "";
+          alert("Pls close the box and refresh site");
+        });
+      } else {
+        alert("All input required");
+      }
     }
   }
 </script>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark text-white fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="/Home">Brand Name</a>
+    <a class="navbar-brand" href="/Home">LVISN</a>
     <button
       class="navbar-toggler"
       data-bs-toggle="collapse"

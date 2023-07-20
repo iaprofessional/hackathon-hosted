@@ -27,22 +27,23 @@
   });
 </script>
 
-<body style="background-color: #FAEAEE;">
+<body style="background-color: #FAEAEE; height: 100vh;">
   <ProactNavbar />
-  <div class="container">
+  <div class="container" style="height: 100vh;">
     <div id="books-container" class="row mt-5">
       {#await getDocs(sellerDB) then s}
         {#each s.docs as data}
           <div class="col-lg-4 col-12 mt-4">
-            <div class="card h-100">
+            <div class="card">
               <img
                 src={data["_document"]["data"]["value"]["mapValue"]["fields"][
                   "image"
                 ].stringValue}
                 alt=""
-                class="card-img-top h-50"
+                class="card-img-top fluid-img"
+                style="object-fit: fill"
               />
-              <div class="card-body h-50">
+              <div class="card-body p-1">
                 <h1 class="card-title">
                   {data["_document"]["data"]["value"]["mapValue"]["fields"][
                     "title"

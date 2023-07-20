@@ -29,7 +29,7 @@
   });
 </script>
 
-<body style="background-color: #FAEAEE; height: 100v;">
+<body style="background-color: #FAEAEE; height: 100vh;">
   <ProactNavbar />
   <div class="container mt-5">
     <div class="row mt-5">

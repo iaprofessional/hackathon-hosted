@@ -5,6 +5,15 @@
 </script>
 
 <body style="background-color: #FAEAEE;">
+  <!-- svelte-ignore a11y-distracting-elements -->
+  <b>
+    <marquee
+      class="mt-3"
+      bgcolor="#C65097"
+      style="font-size: 30px ; color: #FAEAEE;"
+      >Flat 90% discount!
+    </marquee>
+  </b>
   <center style="background-color: #FAEAEE;">
     <ProactNavbar />
     <br />
@@ -15,20 +24,27 @@
           <div class="vstack">
             <img
               src="https://imgtr.ee/images/2023/07/15/cb47bcc078cd3e751128c23540fc55e2.png"
-              class="rounded d-block"
-              alt=""
+              class="fluid-img rounded d-block"
+              alt="90% off"
             />
             <br />
-            <h1>A simple way to get second hand books</h1>
+            <h1>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni,
+              est?
+            </h1>
             <br />
-            <p>
-              Find second hand books at the lowest possible price. Books of all
-              genres are available.
+            <p class="lead display-6">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus
+              odio nostrum laudantium deleniti sed quaerat quibusdam neque
+              dolorem voluptas illo!
             </p>
             <br />
             <h1>Finding target audiences made easy</h1>
             <br />
-            <p>Reach you audience with our analyctics and statistics tools.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus
+              accusamus error quo sapiente, maiores suscipit?
+            </p>
           </div>
         </div>
       </div>
