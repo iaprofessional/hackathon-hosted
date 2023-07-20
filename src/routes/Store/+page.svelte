@@ -21,10 +21,10 @@
   const db = getFirestore();
   const sellerDB = collection(db, "sellerDB");
 
-  // getDocs(sellerDB).then((s) => {
-  // 	console.log(s.docs.length);
-  // 	console.log(s.docs);
-  // });
+  getDocs(sellerDB).then((s) => {
+    // console.log(s.docs.length);
+    console.log(s.docs);
+  });
 </script>
 
 <body style="background-color: #FAEAEE;">
@@ -51,12 +51,12 @@
                 <h1 class="card-subtitle">
                   {data["_document"]["data"]["value"]["mapValue"]["fields"][
                     "number"
-                  ].stringValue}
+                  ].integerValue}
                 </h1>
                 <h1 class="card-text">
-                  {data["_document"]["data"]["value"]["mapValue"]["fields"][
+                  ₹ {data["_document"]["data"]["value"]["mapValue"]["fields"][
                     "price"
-                  ].stringValue}
+                  ].integerValue}
                 </h1>
               </div>
             </div>

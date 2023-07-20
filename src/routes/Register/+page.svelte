@@ -29,7 +29,7 @@
   });
 </script>
 
-<body style="background-color: #FAEAEE;">
+<body style="background-color: #FAEAEE; height: 100v;">
   <ProactNavbar />
   <div class="container mt-5">
     <div class="row mt-5">
@@ -52,12 +52,12 @@
               <h3>
                 {data["_document"]["data"]["value"]["mapValue"]["fields"][
                   "number"
-                ].stringValue}
+                ].integerValue}
               </h3>
             </div>
           </div>
         {/each}
       {/await}
     </div>
-  </div></body
->
+  </div>
+</body>

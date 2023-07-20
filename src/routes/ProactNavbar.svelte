@@ -73,6 +73,11 @@
     return fname;
   }
 
+  function Loading() {
+    document.getElementById("modal").innerHTML =
+      "<div class='spinner-border' role='status'><span class='sr-only'>Loading...</span></div>";
+  }
+
   let ST = "";
   var SP = "";
   var Snumber = "";
@@ -82,6 +87,7 @@
   var BN = "";
   var downloadURL;
   async function UploadP() {
+    // Loading();
     var image = files[0];
     var imgName = ST + output;
     const storage = getStorage();
@@ -189,7 +195,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="modal">
         <div>
           <div class="card">
             <center>
